@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #6366F1;
+    --accent-color: #3f83f8;
+    --text-color: #333333;
+    --link-color: #2563eb;
+    --background-color: #ffffff;
+    --light-gray: #f0f0f0;
+    --gray: #808080;
+    --dark-gray: #555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.header {
+    background-color: var(--light-gray);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    height: 3rem;
+    width: 3rem;
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--gray);
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--link-color);
+}
+
+.contact-btn {
+    display: block;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.contact-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-icon {
+    height: 2rem;
+    width: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        background-color: var(--light-gray);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav.show {
+        display: flex;
+    }
+}
+.content{
+    display: flex;
+    flex-direction: row;
+}
+
+.main-section {
+    max-width: 1280px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.content-left {
+    
+    flex: 1 1 50%;
+    animation: slidefromleft 1s ease forwards ;
+}
+@keyframes slidefromleft {
+    0%{
+        opacity: 0;
+        transform: translateX(-100%)
+    }
+    100%{
+        opacity: 100;
+        transform: translateX(0);
+    }
+}
+
+.content-left h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    color: var(--primary-color);
+}
+
+.content-left p {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    
+    
+}
+.button-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.start-button, .tour-button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.start-button {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+}
+
+.start-button:hover {
+    background-color: var(--accent-color);
+}
+
+.tour-button {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--gray);
+}
+
+.tour-button:hover {
+    background-color: var(--gray);
+    color: var(--background-color);
+}
+
+.content-right {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
