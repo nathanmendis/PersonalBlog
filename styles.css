@@ -24,6 +24,7 @@ body {
     color: var(--text-color);
 }
 
+/* Header Section */
 .header {
     background-color: var(--light-gray);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -68,7 +69,6 @@ body {
 }
 
 .contact-btn {
-    display: block;
     background-color: var(--primary-color);
     color: var(--background-color);
     border: none;
@@ -95,8 +95,9 @@ body {
     width: 2rem;
 }
 
+/* Responsive Nav */
 @media screen and (max-width: 768px) {
-    .nav {
+    .nav,.contact-btn {
         display: none;
         flex-direction: column;
         background-color: var(--light-gray);
@@ -116,55 +117,63 @@ body {
         display: flex;
     }
 }
+
+/* Content Section */
 .content{
-    display: flex;
-    flex-direction: row;
-}
 
-.main-section {
+    padding-top: 1.5rem;
+}
+.main-section{
     max-width: 1280px;
-    margin: 2rem auto;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 2rem;
-    padding: 0 1rem;
+    padding: 1rem;
+    align-items: center;
+    margin: 0 auto;
 }
-
-.content-left {
+.content-left{
+    text-align: center;
+    animation: slidefromleft 2s ease;
     
-    flex: 1 1 50%;
-    animation: slidefromleft 1s ease forwards ;
 }
 @keyframes slidefromleft {
-    0%{
+    0% {
         opacity: 0;
-        transform: translateX(-100%)
+        transform: translateX(-100%);
     }
-    100%{
-        opacity: 100;
+    100% {
+        opacity: 1;
         transform: translateX(0);
     }
 }
-
-.content-left h1 {
-    font-size: 2.5rem;
-    margin: 1rem 0;
+.section-heading{
+    font-size: 1.05rem;
+    font-weight: 600;
     color: var(--primary-color);
 }
-
-.content-left p {
-    font-size: 1.125rem;
-    margin-bottom: 1.5rem;
-    
-    
+.section-heading1{
+    font-size: 2.3rem;
+    padding: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color);
 }
-.button-group {
+.section-descrtiption{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--gray);
+}
+
+.button-group{
+    margin-top: 0.2rem;
     display: flex;
-    gap: 1rem;
-}
+    gap: 1.3rem;
+    padding: 1rem;
+    justify-content: center;
 
+}
 .start-button, .tour-button {
+     
     padding: 0.8rem 1.5rem;
     border-radius: 0.5rem;
     font-weight: 600;
@@ -179,30 +188,104 @@ body {
 }
 
 .start-button:hover {
-    background-color: var(--accent-color);
+    background-color: var(--link-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .tour-button {
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--text-color);
+    color: var(--background-color);
     border: 1px solid var(--gray);
 }
 
 .tour-button:hover {
-    background-color: var(--gray);
-    color: var(--background-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
-
-.content-right {
-    flex: 1 1 50%;
+.content-right{
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image-container{
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    height: 40vh;
+    
+}
+ .section-image{
+    height: 100%;
+    width: 100%;
+ }
+ @media screen and (min-width:780px){
+    .main-section{
+        flex-direction: row;
+    }
+    .content-left{
+        max-width: 50%;
+        padding-left: 0;
+        text-align: left;
+    }
+    .button-group{
+        justify-content: start;
+        padding-left: 0;
+    }
+    .section-heading{
+        font-size: 0.9rem;
+        padding-left: 0;
+    }
+    .section-heading1{
+        padding-left: 0;
+    }
+   .image-container{
+    height: 56 vh;
+   }
+ }
+ /* skills section */
+ .skills-container{
+
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 4rem;
+    animation: slidefromleft 2s ease;
+
+ }
+ .skill-grid{
+    margin-top: 1rem;
+    border: none;
+    border-radius: 0.655rem;
+    background-color: var(--gray);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3rem;
+    padding: 1rem;
+ }
+ .skill-logo{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray);
+    display: flex;
+    gap: 0.5rem;
+ }
+ .skill-logo1{
+    height: 1.3rem;
+ }
+.skill-span{
+    color:var(--text-color);
+}
+@media screen and (min-width:640px){
+    .skill-grid{
+        height: 4rem;
+        grid-template-columns: repeat(4,1fr);
+    }
+    .skill-logo1{
+        height: 1.5rem;
+     }
+    
 }
 
-.section-image {
-    max-width: 50%;
-    height: auto;
-    border-radius: 0.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
+ 
